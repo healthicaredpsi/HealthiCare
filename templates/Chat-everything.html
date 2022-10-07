@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <style>
+        html,
+        body {
+            overflow: auto;
+            overflow-x: hidden;
+            background-color: #ca6d6d;
+            height: 1500px;
+        }
+
+        nav {
+            position: absolute;
+            width: 2446px;
+            height: 200px;
+            left: 0px;
+            top: -41px;
+            background: #BE4D4D;
+        }
+
+        .button {
+            width: 150px;
+            height: 40px;
+            position: absolute;
+            border-radius: 10px;
+            background-color: #F36666;
+        }
+
+        .button>p {
+            font-family: 'Montserrat';
+            top: 100px;
+            text-align: center;
+            color: white
+        }
+
+        div:hover {
+            background-color: #D05959;
+        }
+
+        #button3place {
+            left: 1310px;
+            top: 108px;
+        }
+
+        #button4place {
+            left: 1110px;
+            top: 108px;
+        }
+
+        #button5place {
+            left: 1110px;
+            top: 1108px;
+        }
+
+        #logo {
+            position: absolute;
+            width: 180px;
+            height: 180px;
+            left: 07px;
+            top: 20px;
+        }
+
+        .fade-in {
+            animation: fadeIn 4s
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: -3;
+            }
+
+
+            to {
+                opacity: 3;
+            }
+
+        }
+
+        #logotext {
+            position: absolute;
+            width: 266px;
+            height: 55px;
+            left: 209px;
+            top: 64px;
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 35px;
+            line-height: 55px;
+            color: white;
+        }
+
+        .newthing {
+            position: absolute;
+            height: 644px;
+            left: 568px;
+            width: 404px;
+            top: 480px;
+            padding: 30px;
+            border-radius: 6px;
+            background: rgb(233, 159, 159);
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+
+        #breathe {
+            position: absolute;
+            top: 282px;
+            left: 668px;
+            color: #fff;
+            font-family: 'Montserrat';
+            font-size: 48px;
+
+        }
+
+        .chat-input {
+            position: absolute;
+            display: flex;
+            align-items: center;
+            left: ;
+            width: 80%;
+            height: 40px;
+            padding: 15px;
+            overflow: hidden;
+            position: absolute;
+            bottom: 0;
+        }
+
+        .chat-input input {
+            width: calc(100% - 40px);
+            height: 100%;
+            background-color: #4f5d7321;
+            border-radius: 50px;
+            color: #000;
+            font-size: 1.2em;
+            padding: 0 15px;
+        }
+
+        .send-btn {
+            width: 40px;
+            height: 40px;
+            background-color: transparent;
+            overflow: hidden;
+            position: relative;
+            margin-left: 5px;
+            cursor: pointer;
+            transition: 0.4s ease-in-out;
+        }
+
+        #footer {
+            position: absolute;
+            width: 1920px;
+            height: 176px;
+            left: 0px;
+            top: 1490px;
+            background: #BE4D4D;
+        }
+
+        #footer {
+            position: absolute;
+            width: 1920px;
+            height: 176px;
+            left: 0px;
+            top: 1390px;
+            background: #BE4D4D;
+        }
+
+        #footertext {
+            position: absolute;
+            width: 922px;
+            height: 61px;
+            left: 400px;
+            top: 31px;
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 30px;
+            line-height: 70px;
+            color: #fff;
+        }
+
+        #follow {
+            position: absolute;
+            width: 122px;
+            height: 61px;
+            left: 1096px;
+            top: 91px;
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 70px;
+            color: #fff;
+        }
+
+        .newthingname {
+            position: absolute;
+            height: 24px;
+            left: 0px;
+            width: 404px;
+            top: 0px;
+            padding: 30px;
+            border-radius: 6px;
+            background: #F36666;
+        }
+
+        .newthingmessage {
+            position: absolute;
+            height: 24px;
+            left: 0px;
+            width: 404px;
+            top: 630px;
+            padding: 30px;
+            border-radius: 6px;
+            background: #F36666;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="chatapp.css">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <title>Chat | HealthiCare</title>
+</head>
+
+<body>
+
+    <nav class="fade-in">
+
+        <img src="draft_different color.png" id="logo">
+        <p id="logotext">HealthiCare</p>
+
+        <a href="relax.html">
+            <div class="button" id="button3place">
+                <p>Relax</p>
+            </div>
+        </a>
+
+        <a href="../home">
+            <div class="button" id="button4place">
+                <p>Home</p>
+            </div>
+        </a>
+
+        <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+    </nav>
+
+    <main class="newthing">
+        <main class="newthingname"></main>
+        <hr color="#BE4D4D" style="position:absolute; top:23px">
+        <main class="newthingmessage"></main>
+        <main class="chat-input">
+
+            <input type="text" placeholder="Enter Message" />
+            <button class="send-btn">
+                <i class="uil uil-message"></i>
+            </button>
+        </main>
+    </main>
+
+    <p id="breathe">Chatty-Care</p>
+
+    <footer id="footer">
+        <p id="footertext">Copyright@2022 HealthiCare</p>
+        <a href="https://www.instagram.com/healthi.care/">
+            <lottie-player src="https://assets4.lottiefiles.com/packages/lf20_2ks3pjua.json" background="transparent"
+                speed="1" style="position:absolute; top:111px; left:1293px; width:70px; height: 70px;" loop autoplay>
+            </lottie-player>
+        </a>
+
+        <a href="https://twitter.com/DpsiHackathon">
+            <lottie-player src="https://assets7.lottiefiles.com/packages/lf20_hdy0htc2.json" background="transparent"
+                speed="1" style="position:absolute; top:111px; left:1353px; width:70px; height: 70px;" loop autoplay>
+            </lottie-player>
+        </a>
+
+        <a href="https://www.facebook.com/healthicareDPSI/">
+            <lottie-player src="https://assets8.lottiefiles.com/packages/lf20_7akxvutj.json" background="transparent"
+                speed="1" style="position:absolute; top:111px; left:1413px; width:70px; height: 70px;" loop autoplay>
+            </lottie-player>
+        </a>
+        <img src="draft_different color.png" id="logo" style="position:absolute; height:150px; width:150px" ; left:98px>
+
+        <p id="follow">Follow us on: </p>
+
+    </footer>
+
+
+
+</body>
+
+</html>

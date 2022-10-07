@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        html,
+        body {
+            overflow: auto;
+            overflow-x: hidden;
+            background-size: cover;
+            background-color: #fff;
+            height: 3100px;
+            font-family: 'Montserrat';
+        }
+
+        .container {
+            position: absolute;
+            top: 0;
+            left: 0px;
+            width: 100px;
+            height: 100px;
+            z-index: 0;
+
+        }
+
+        .content {
+            position: absolute;
+            width: 500%;
+            height: 500%;
+            left: 513px;
+            top: 880px;
+            z-index: 100px;
+        }
+
+        .container h2 {
+            position: absolute;
+            top: 50%;
+            line-height: 100px;
+            height: 90px;
+            margin-top: -50px;
+            font-size: 90px;
+            width: 100%;
+            text-align: center;
+            font-family: 'Montserrat';
+            color: transparent;
+            animation: BlurFadeInOut 3s ease-in backwards;
+        }
+
+        .container h2.frame-1 {
+            animation-delay: 0s;
+
+        }
+
+        .container h2.frame-2 {
+            animation-delay: 3s;
+
+        }
+
+        .container h2.frame-3 {
+            animation-delay: 6s;
+
+        }
+
+        .container h2.frame-4 {
+            animation-delay: 9s;
+
+        }
+
+        .container h2.frame-5 {
+            animation: none;
+            color: transparent;
+            text-shadow: 0px 0px 1px #D05959;
+        }
+
+        .container h2.frame-5 span {
+            animation: blurFadeIn 3s ease-in 12s backwards;
+            color: transparent;
+            text-shadow: 0px 0 px 1px #D05959;
+        }
+
+        .container h2.frame-5 span:nth-child(2) {
+            animation-delay: 13s;
+        }
+
+        .container h2.frame-5 span:nth-child(3) {
+            animation-delay: 14s;
+        }
+
+        .globe {
+            position: absolute;
+            width: 282px;
+            height: 273px;
+            left: 50%;
+            top: 50%;
+            margin: -137px 0 0 -141px;
+            background: transparent;
+            animation: fadeInBack 3.6s linear 14s backwards;
+            filter: alpha(opacity=30);
+            opacity: 0.3;
+            transform: scale(5);
+        }
+
+        @keyframes BlurFadeInOut {
+            0% {
+                opacity: 0;
+                text-shadow: 0px 0px 40px #D05959;
+                transform: scale(1.3);
+            }
+
+            20%,
+            75% {
+                opacity: 1;
+                text-shadow: 0px 0px 1px #D05959;
+                transform: scale(1);
+            }
+
+            100% {
+                opacity: 0;
+                text-shadow: 0px 0px 50px #D05959;
+                transform: scale(0);
+            }
+        }
+
+        @keyframes blurFadeIn {
+            0% {
+                opacity: 0;
+                text-shadow: 0px 0px 40px #D05959;
+                transform: scale(1.1);
+            }
+
+            50% {
+                opacity: 0.5;
+                text-shadow: 0px 0px 10px #D05959;
+                transform: scale(1.1);
+            }
+
+            100% {
+                opacity: 1;
+                text-shadow: 0px 0px 1px #D05959;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes fadeInBack {
+            0% {
+                opacity: 0;
+                transform: scale(0);
+            }
+
+            50% {
+                opacity: 0.4;
+                transform: scale(2);
+            }
+
+            100% {
+                opacity: 0.2;
+                transform: scale(5);
+            }
+        }
+
+        header {
+            position: absolute;
+            width: 2446px;
+            height: 144px;
+            left: -106px;
+            top: -41px;
+            background: #D05959;
+        }
+
+        #logo {
+            position: absolute;
+            width: 122px;
+            height: 122px;
+            left: 137px;
+            top: 21px;
+        }
+
+        #logotext {
+            position: absolute;
+            width: 266px;
+            height: 55px;
+            left: 279px;
+            top: 65px;
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 35px;
+            line-height: 55px;
+            color: white;
+        }
+
+        #middle {
+            position: absolute;
+            top: 150px;
+            left: 554px;
+            font-size: 69px;
+            color: #D05959;
+            font-family: 'Montserrat';
+        }
+
+        .fade-in {
+            animation: fadeIn 4s;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        #left {
+            position: absolute;
+            top: 440px;
+            left: 184px;
+            font-size: 69px;
+            color: #D05959;
+            font-family: 'Montserrat';
+        }
+
+        #right {
+            position: absolute;
+            top: 440px;
+            left: 1003px;
+            font-size: 69px;
+            color: #D05959;
+            font-family: 'Montserrat';
+        }
+
+        #hr1 {
+            position: absolute;
+            width: 2781.05px;
+            height: 0px;
+            left: -222px;
+            top: 793px;
+            border: solid #D05959;
+            transform: rotate(-0.33deg);
+        }
+
+        .flip-card {
+            margin: 20px;
+            position: absolute;
+            transform-style: preserve-3d;
+            perspective: 1000px;
+        }
+
+        .flip-card-front,
+        .flip-card-back {
+            width: 380px;
+            min-height: 600px;
+            height: auto;
+            background-color: #000000;
+            background-image: url(https://i.pinimg.com/564x/e1/3a/8c/e13a8cb767cd1ec771b3b21d25bdcdb2.jpg);
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+            backface-visibility: hidden;
+            transform-style: preserve-3d;
+            transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
+        }
+
+        .flip-card:nth-of-type(2) .flip-card-front,
+        .flip-card:nth-of-type(2) .flip-card-back {
+            background-image: url(https://i.pinimg.com/736x/57/12/cd/5712cd27cfee1ca04f1b5cf6f033bc6b.jpg);
+        }
+
+        .flip-card:nth-of-type(3) .flip-card-front,
+        .flip-card:nth-of-type(3) .flip-card-back {
+            background-image: url(https://i.pinimg.com/736x/b4/55/f1/b455f167819d80e396827aa8a72bd6b3.jpg);
+        }
+
+        .flip-card:nth-of-type(4) .flip-card-front,
+        .flip-card:nth-of-type(4) .flip-card-back {
+            background-image: url(https://i.pinimg.com/736x/11/9c/74/119c740e9b83eda01f0267d70c21c8bc.jpg);
+        }
+
+        .flip-card-front {
+            transform: rotateY(0deg);
+        }
+
+        .flip-card-back {
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform: rotateY(180deg);
+        }
+
+        .flip-card-front::after,
+        .flip-card-back::after {
+            content: "";
+            width: 100%;
+            height: 100%;
+            background-color: #0a0a0a;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0.6;
+        }
+
+        .flip-card-front .inner,
+        .flip-card-back .inner {
+            width: 100%;
+            padding: 40px;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%) translateZ(60px) scale(0.94);
+            z-index: 2;
+        }
+
+        .inner .icon {
+            width: 120px;
+            margin-bottom: 20px;
+        }
+
+        .inner h3 {
+            margin-bottom: 8px;
+            color: #ffffff;
+            font-size: 30px;
+            font-weight: 700;
+            line-height: 40px;
+            text-transform: capitalize;
+        }
+
+        .inner p {
+            color: #ffffff;
+            font-size: 16px;
+            line-height: 28px;
+            left: 48000px;
+        }
+
+        .flip-card:hover .flip-card-front {
+            transform: rotateY(-180deg);
+        }
+
+        .flip-card:hover .flip-card-back {
+            transform: rotateY(0deg);
+        }
+
+        #position1 {
+            left: 120px;
+            top: 1720px
+        }
+
+        #position2 {
+            left: 1020px;
+            top: 1720px;
+        }
+
+        #position3 {
+            left: 120px;
+            top: 2420px
+        }
+
+        #position4 {
+            left: 1020px;
+            top: 2420px
+        }
+
+        #hr2 {
+            position: absolute;
+            width: 531.01px;
+            height: 1px;
+            top: 1500px;
+            left: 0px;
+        }
+
+        #hr3 {
+            position: absolute;
+            width: 531.01px;
+            height: 1px;
+            top: 1500px;
+            left: 1030px;
+        }
+
+        #footer {
+            position: absolute;
+            width: 1920px;
+            height: 176px;
+            left: 0px;
+            top: 1490px;
+            background: #BE4D4D;
+        }
+
+        #footer {
+            position: absolute;
+            width: 1920px;
+            height: 176px;
+            left: 0px;
+            top: 3290px;
+            background: #BE4D4D;
+        }
+
+        #footertext {
+            position: absolute;
+            width: 922px;
+            height: 61px;
+            left: 400px;
+            top: 80px;
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 30px;
+            line-height: 70px;
+            color: #fff;
+        }
+
+        #follow {
+            position: absolute;
+            width: 122px;
+            height: 61px;
+            left: 1096px;
+            top: 101px;
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 70px;
+            color: #fff;
+        }
+
+        .button {
+            position: absolute;
+            width: 150px;
+            height: 40px;
+            left: 107px;
+            position: absolute;
+            border-radius: 10px;
+            background-color: #F36666;
+        }
+
+        .button>p {
+            position: absolute;
+            font-family: 'Montserrat';
+            top: 12px;
+            left: 56px;
+            text-align: center;
+            color: white
+        }
+
+        main:hover {
+            background-color: #D05959;
+        }
+
+        #button3place {
+            left: 1310px;
+            top: 68px;
+        }
+    </style>
+    <title>About | HealthiCare</title>
+    <link rel="stylesheet" href="about.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap" rel="stylesheet">
+</head>
+
+<body class="fade-in">
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+    <header>
+        <img src="logo.png" id="logo">
+        <p id="logotext">HealthiCare</p>
+        <a href="/home">
+            <main class="button" id="button3place">
+                <p>Home</p>
+            </main>
+        </a>
+
+    </header>
+
+    <h1 id="middle" class="fade-in">HealthiCare</h1>
+    <p id="left" class="fade-in">Your</p>
+    <p id="right" class="fade-in">HealthiFriend</p>
+
+
+    <lottie-player src="https://assets6.lottiefiles.com/packages/lf20_OSbIJZuUIx.json" background="transparent"
+        speed="1" style="position:absolute; top: 234px; left:433px; width: 600px; height: 600px;" loop autoplay>
+    </lottie-player>
+
+    <hr id="hr1" color="#">
+
+    <section class="container">
+        <section class="content">
+            <section class="globe"></section>
+            <h2 class="frame-1">What is well-being?</h2>
+            <h2 class="frame-2">Why well-being?</h2>
+            <h2 class="frame-3">What is our goal?</h2>
+            <h2 class="frame-4">What do we provide?</h2>
+            <h2 class="frame-5">
+                <span>Here are</span>
+                <span>your</span>
+                <span>answers</span>
+            </h2>
+        </section>
+    </section>
+
+    <lottie-player src="https://assets7.lottiefiles.com/packages/lf20_u7yrcwlk.json" background="transparent" speed=".4"
+        style="position:absolute; top:983px; left:23px; width: 300px; height: 300px;" loop autoplay></lottie-player>
+    <lottie-player src="https://assets7.lottiefiles.com/packages/lf20_u7yrcwlk.json" background="transparent" speed=".4"
+        style="position:absolute; top:983px; left:1213px; width: 300px; height: 300px;" loop autoplay></lottie-player>
+
+    <hr id="hr2" color="#D05959">
+    <hr id="hr3" color="#D05959">
+
+
+    <div class="flip-card" id="position1">
+        <div class="flip-card-front">
+            <div class="inner">
+                <lottie-player src="https://assets3.lottiefiles.com/packages/lf20_sjrpgwkd.json"
+                    background="transparent" speed="1"
+                    style="position:absolute; top:-59px; left:143px; width: 100px; height: 100px;" loop autoplay>
+                </lottie-player>
+                <h3>HealthiCare</h3>
+                <p>
+                    What is well-being?
+                </p>
+            </div>
+        </div>
+        <div class="flip-card-back">
+            <div class="inner">
+                <img src="draft_different_color__1_-removebg-preview.png" class="icon">
+                <h3>Well-being</h3>
+                <p>
+                    You know the importance of well being, but by knowing what it is we will have a better idea of what
+                    our app has to provide.
+
+                    In basic words, well-being is A heightened, flexible attentiveness to your environment and internal
+                    cues such as bodily sensations, thoughts and feelings.
+
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="flip-card" id="position2">
+        <div class="flip-card-front">
+            <div class="inner">
+                <lottie-player src="https://assets3.lottiefiles.com/packages/lf20_sjrpgwkd.json"
+                    background="transparent" speed="1"
+                    style="position:absolute; top:-59px; left:143px; width: 100px; height: 100px;" loop autoplay>
+                </lottie-player>
+                <h3>HealthiCare</h3>
+                <p>
+                    Why well-being?
+                </p>
+            </div>
+        </div>
+        <div class="flip-card-back">
+            <div class="inner">
+                <img src="draft_different_color__1_-removebg-preview.png" class="icon" />
+                <h3>Why well-being?</h3>
+                <p>
+                    Researchers continue to investigate the factors that shape well-being. Rather than pitching a fixed
+                    scientific definition of well-being, we’re constantly unearthing clues and evidence about how
+                    well-being manifests itself in the mind and body. It’s not a static "thing" – but a set of skills
+                    that can be learned and cultivated over time, just like learning to play a musical instrument or
+                    riding a bike.
+
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="flip-card" id="position3">
+        <div class="flip-card-front">
+            <div class="inner">
+                <lottie-player src="https://assets3.lottiefiles.com/packages/lf20_sjrpgwkd.json"
+                    background="transparent" speed="1"
+                    style="position:absolute; top:-59px; left:143px; width: 100px; height: 100px;" loop autoplay>
+                </lottie-player>
+                <h3>HealthiCare</h3>
+                <p>
+                    What is our goal?
+                </p>
+            </div>
+        </div>
+        <div class="flip-card-back">
+            <div class="inner">
+                <img src="draft_different_color__1_-removebg-preview.png" class="icon" />
+                <h3>Our goal</h3>
+                <p>
+
+                    We here at Healthicare provide various features such as screen time tracker, yoga tutorials and
+                    meditation rooms to help our users who have a good and healthy lifestyle and mindset both, providing
+                    a well being in a way to our users
+
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="flip-card" id="position4">
+        <div class="flip-card-front">
+            <div class="inner">
+                <lottie-player src="https://assets3.lottiefiles.com/packages/lf20_sjrpgwkd.json"
+                    background="transparent" speed="1"
+                    style="position:absolute; top:-59px; left:143px; width: 100px; height: 100px;" loop autoplay>
+                </lottie-player>
+                <h3>HealthiCare</h3>
+                <p>
+                    What do we provide?
+                </p>
+            </div>
+        </div>
+        <div class="flip-card-back">
+            <div class="inner">
+                <img src="draft_different_color__1_-removebg-preview.png" class="icon" />
+                <h3>Features</h3>
+                <p>
+
+                    Here at healthcare we have tried our best to create an application with many features such as:
+                    Meditation
+                    Breathing practices
+                    Screen time alert
+                    Tutorials
+                    Chat bot
+                    to help our users maintain a well-being and keep them entertained at the same time by doing
+                    challenges and earning medals as rewards for complete entertainment.
+
+
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <img src="draft_different_color__1_-removebg-preview.png"
+        style="position:absolute; height: 400px; width:400px; top:2200px; left: 580px;">
+
+
+    <footer id="footer">
+        <p id="footertext">Copyright@2022 HealthiCare</p>
+        <a href="https://www.instagram.com/healthi.care/">
+            <lottie-player src="https://assets4.lottiefiles.com/packages/lf20_2ks3pjua.json" background="transparent"
+                speed="1" style="position:absolute; top:101px; left:1293px; width:70px; height: 70px;" loop autoplay>
+            </lottie-player>
+        </a>
+
+        <a href="https://twitter.com/DpsiHackathon">
+            <lottie-player src="https://assets7.lottiefiles.com/packages/lf20_hdy0htc2.json" background="transparent"
+                speed="1" style="position:absolute; top:101px; left:1353px; width:70px; height: 70px;" loop autoplay>
+            </lottie-player>
+        </a>
+
+        <a href="https://www.facebook.com/healthicareDPSI/">
+            <lottie-player src="https://assets8.lottiefiles.com/packages/lf20_7akxvutj.json" background="transparent"
+                speed="1" style="position:absolute; top:101px; left:1413px; width:70px; height: 70px;" loop autoplay>
+            </lottie-player>
+        </a>
+        <img src="draft_different color.png" id="logo"
+            style="position:absolute; height:150px; width:150px; left:18px; top: 2px">
+
+        <p id="follow">Follow us on: </p>
+
+    </footer>
+
+
+
+</body>
+
+</html>

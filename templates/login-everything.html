@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        html,
+        body {
+            overflow: auto;
+            overflow-x: hidden;
+            background-color: #D05959;
+            height: 1500px;
+        }
+
+        nav {
+            position: absolute;
+            width: 2446px;
+            height: 200px;
+            left: 0px;
+            top: -41px;
+            background: #BE4D4D;
+        }
+
+        .button {
+            width: 150px;
+            height: 40px;
+            position: absolute;
+            border-radius: 10px;
+            background-color: #F36666;
+        }
+
+        .button>p {
+            font-family: 'Montserrat';
+            top: 100px;
+            text-align: center;
+            color: white
+        }
+
+        div:hover {
+            background-color: #D05959;
+        }
+
+        #button3place {
+            left: 1310px;
+            top: 108px;
+        }
+
+        #button4place {
+            left: 1110px;
+            top: 108px;
+        }
+
+        #button5place {
+            left: 1110px;
+            top: 1108px;
+        }
+
+        #logo {
+            position: absolute;
+            width: 182px;
+            height: 182px;
+            left: 07px;
+            top: 20px;
+        }
+
+        #logotext {
+            position: absolute;
+            width: 266px;
+            height: 55px;
+            left: 209px;
+            top: 64px;
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 35px;
+            line-height: 55px;
+            color: white;
+        }
+
+        #text {
+            width: 100%;
+            font-family: 'Montserrat';
+            text-align: center;
+            position: absolute;
+            left: -517px;
+            top: 288px;
+            transform: translateY(-50%);
+            color: white
+        }
+
+        #text2 {
+            width: 100%;
+            text-align: center;
+            font-family: 'Montserrat';
+            position: absolute;
+            left: 517px;
+            top: 288px;
+            transform: translateY(-50%);
+            color: white
+        }
+
+        #text3 {
+            width: 100%;
+            text-align: center;
+            font-family: 'Montserrat';
+            position: absolute;
+            left: -577px;
+            top: 688px;
+            transform: translateY(-50%);
+            color: white
+        }
+
+
+        #text4 {
+            width: 100%;
+            text-align: center;
+            font-family: 'Montserrat';
+            position: absolute;
+            left: 557px;
+            top: 688px;
+            transform: translateY(-50%);
+            color: white
+        }
+
+        span {
+            font-size: 55px;
+            padding: 0 calc(0.5rem + 0.5vw);
+            position: relative;
+            opacity: 0;
+        }
+
+        span:not(#dot) {
+            bottom: -200px;
+            animation-name: appear;
+            animation-duration: 2s;
+            animation-timing-function: ease-out;
+            animation-fill-mode: forwards;
+        }
+
+        span:nth-of-type(2) {
+            animation-delay: 0.2s;
+        }
+
+        span:nth-of-type(3) {
+            animation-delay: 0.4s;
+        }
+
+        span:nth-of-type(4) {
+            animation-delay: 0.6s;
+        }
+
+        span:nth-of-type(5) {
+            animation-delay: 0.8s;
+        }
+
+        span:nth-of-type(6) {
+            animation-delay: 1.0s;
+        }
+
+        span:nth-of-type(7) {
+            animation-delay: 1.2s;
+        }
+
+        #dot {
+            bottom: 100px;
+            animation-name: dot;
+            animation-duration: 1s;
+            animation-timing-function: ease-in;
+            animation-fill-mode: forwards;
+            animation-delay: 1.3s;
+        }
+
+        @keyframes appear {
+            0% {
+                opacity: 0;
+                bottom: -200px;
+            }
+
+            70% {
+                opacity: 1;
+                bottom: 15px;
+            }
+
+            85% {
+                opacity: 1;
+                bottom: -10px;
+            }
+
+            100% {
+                opacity: 1;
+                bottom: 0;
+            }
+        }
+
+        @keyframes dot {
+            0% {
+                opacity: 0;
+                bottom: 100px;
+            }
+
+            50% {
+                opacity: 1;
+                bottom: 0;
+            }
+
+            65% {
+                opacity: 1;
+                bottom: 15px;
+            }
+
+            75% {
+                opacity: 1;
+                bottom: 0;
+            }
+
+            90% {
+                opacity: 1;
+                bottom: 10px;
+            }
+
+            100% {
+                opacity: 1;
+                bottom: 0;
+            }
+        }
+
+        #hr1 {
+            position: absolute;
+            height: .01px;
+            width: 3000px;
+            left: -50px;
+            top: 150px
+        }
+
+        .fade-in {
+            animation: fadeIn 4s
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: -3;
+            }
+
+
+            to {
+                opacity: 3;
+            }
+
+        }
+
+        #maintextbelow {
+            width: 100%;
+            text-align: center;
+            font-family: 'Montserrat';
+            position: absolute;
+            left: 0px;
+            font-size: 67px;
+            top: 918px;
+            transform: translateY(-50%);
+            color: white
+        }
+
+        #button6place {
+            left: 570px;
+            top: 1108px;
+        }
+
+        .button1 {
+            width: 350px;
+            height: 80px;
+            position: absolute;
+            border-radius: 10px;
+            background-color: #F36666;
+        }
+
+        .button1>p {
+            position: absolute;
+            top: -25px;
+            left: 64px;
+            font-family: 'Montserrat';
+            text-align: center;
+            font-size: 38px;
+            color: white
+        }
+
+        main:hover {
+            background-color: white;
+        }
+
+        .button1>p:hover {
+            color: #BE4D4D;
+        }
+
+        #footer {
+            position: absolute;
+            width: 1920px;
+            height: 176px;
+            left: 0px;
+            top: 1490px;
+            background: #BE4D4D;
+        }
+
+        #footer {
+            position: absolute;
+            width: 1920px;
+            height: 176px;
+            left: 0px;
+            top: 1390px;
+            background: #BE4D4D;
+        }
+
+        #footertext {
+            position: absolute;
+            width: 922px;
+            height: 61px;
+            left: 400px;
+            top: 31px;
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 30px;
+            line-height: 70px;
+            color: #fff;
+        }
+
+        #follow {
+            position: absolute;
+            width: 122px;
+            height: 61px;
+            left: 1096px;
+            top: 91px;
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 70px;
+            color: #fff;
+        }
+    </style>
+    <title>Log in | HealthiCare</title>
+    <link rel="stylesheet" href="log_in.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap" rel="stylesheet">
+</head>
+
+<body class="fade-in">
+
+    <nav>
+
+        <img src="draft_different color.png" id="logo">
+        <p id="logotext">HealthiCare</p>
+        <lottie-player src="https://assets2.lottiefiles.com/private_files/lf30_43351oot.json" background="transparent"
+            speed="1" style="position:absolute; top:9; left: 315px;width: 200px; height: 200px;" loop autoplay>
+        </lottie-player>
+
+        <a href="/accounts/login">
+            <div class="button" id="button3place">
+                <p>Log in</p>
+            </div>
+        </a>
+
+        <a href="/ContactAbout/about_before_login">
+            <div class="button" id="button4place">
+                <p>About us</p>
+            </div>
+        </a>
+
+        <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+        <lottie-player src="https://assets4.lottiefiles.com/packages/lf20_fmgfy8rq.json" background="transparent"
+            speed="1" style="position:absolute; top:250px; left:390px; width:700px; height: 700px;" loop autoplay>
+        </lottie-player>
+
+    </nav>
+
+    <hr color="#BE4D4D" id="hr1">
+
+    <section id="text">
+        <span>G</span>
+        <span>E</span>
+        <span>T</span>
+    </section>
+
+    <section id="text2">
+        <span>S</span>
+        <span>T</span>
+        <span>A</span>
+        <span>R</span>
+        <span>T</span>
+        <span>E</span>
+        <span>D</span>
+    </section>
+
+    <section id="text3">
+        <span>W</span>
+        <span>I</span>
+        <span>T</span>
+        <span>H</span>
+    </section>
+
+    <section id="text4">
+        <span>U</span>
+        <span>S</span>
+        <span> </span>
+        <span> </span>
+        <span> </span>
+        <span>A</span>
+        <span>T</span>
+    </section>
+
+    <b>
+        <p class="fade-in" id="maintextbelow"> H e a l t h i C a r e
+        </p>
+    </b>
+    <a href="/ContactAbout/about_before_login/">
+        <main class="button1" id="button6place">
+            <p>Learn More</p>
+        </main>
+    </a>
+    <lottie-player src="https://assets8.lottiefiles.com/packages/lf20_ng5snz08.json" background="transparent" speed="1"
+        style="position:absolute; top:1150px; left:770px; width: 100px; height: 100px;" loop autoplay></lottie-player>
+
+    <footer id="footer">
+        <p id="footertext">Copyright@2022 HealthiCare</p>
+        <a href="https://www.instagram.com/healthi.care/">
+            <lottie-player src="https://assets4.lottiefiles.com/packages/lf20_2ks3pjua.json" background="transparent"
+                speed="1" style="position:absolute; top:111px; left:1293px; width:70px; height: 70px;" loop autoplay>
+            </lottie-player>
+        </a>
+
+        <a href="https://twitter.com/DpsiHackathon">
+            <lottie-player src="https://assets7.lottiefiles.com/packages/lf20_hdy0htc2.json" background="transparent"
+                speed="1" style="position:absolute; top:111px; left:1353px; width:70px; height: 70px;" loop autoplay>
+            </lottie-player>
+        </a>
+
+        <a href="https://www.facebook.com/healthicareDPSI/">
+            <lottie-player src="https://assets8.lottiefiles.com/packages/lf20_7akxvutj.json" background="transparent"
+                speed="1" style="position:absolute; top:111px; left:1413px; width:70px; height: 70px;" loop autoplay>
+            </lottie-player>
+        </a>
+        <img src="draft_different color.png" id="logo" style="position:absolute; height:150px; width:150px" ; left:98px>
+
+        <p id="follow">Follow us on: </p>
+
+    </footer>
+
+
+</body>
+
+</html>

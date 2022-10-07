@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        html,
+        body {
+            overflow: auto;
+            overflow-x: hidden;
+            background-size: cover;
+            background-image: linear-gradient(to bottom right, rgb(200, 102, 102), rgb(141, 76, 72));
+            height: 4120px;
+            font-family: 'Montserrat';
+        }
+
+
+        nav {
+            position: absolute;
+            width: 2446px;
+            height: 170px;
+            left: -20px;
+            top: -41px;
+            background: #BE4D4D;
+        }
+
+        .button {
+            width: 150px;
+            height: 40px;
+            position: absolute;
+            border-radius: 10px;
+            background-color: #BE4D4D;
+        }
+
+        .button>p {
+            font-family: 'Montserrat';
+            top: 100px;
+            text-align: center;
+            color: white
+        }
+
+        main:hover {
+            background-color: #D05959;
+        }
+
+        #button3place {
+            left: 1210px;
+            top: 90px;
+        }
+
+        #button4place {
+            left: 1010px;
+            top: 90px;
+        }
+
+        #logo {
+            position: absolute;
+            width: 149px;
+            height: 149px;
+            left: 67px;
+            top: 20px;
+        }
+
+        #logotext {
+            position: absolute;
+            width: 266px;
+            height: 55px;
+            left: 239px;
+            top: 76px;
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 35px;
+            line-height: 55px;
+            color: white;
+        }
+
+        .flip-card {
+            margin: 20px;
+            position: absolute;
+            transform-style: preserve-3d;
+            perspective: 1000px;
+        }
+
+        .flip-card-front,
+        .flip-card-back {
+            width: 380px;
+            min-height: 600px;
+            height: auto;
+            background-color: #000000;
+            background-image: url(22fe8831133c2556ea189a36115b45dc.jpg);
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+            backface-visibility: hidden;
+            transform-style: preserve-3d;
+            transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
+        }
+
+        .flip-card:nth-of-type(2) .flip-card-front,
+        .flip-card:nth-of-type(2) .flip-card-back {
+            background-image: url(7489727-HSC00001-6.jpg);
+        }
+
+        .flip-card:nth-of-type(3) .flip-card-front,
+        .flip-card:nth-of-type(3) .flip-card-back {
+            background-image: url(photo-1617503752587-97d2103a96ea.jpg);
+        }
+
+        .flip-card:nth-of-type(4) .flip-card-front,
+        .flip-card:nth-of-type(4) .flip-card-back {
+            background-image: url(creative-painting-art-work-500x500.jpg);
+        }
+
+        .flip-card:nth-of-type(5) .flip-card-front,
+        .flip-card:nth-of-type(5) .flip-card-back {
+            background-image: url(1660799231561_IMG_20200705_200212__78855.jpg);
+        }
+
+        .flip-card:nth-of-type(6) .flip-card-front,
+        .flip-card:nth-of-type(6) .flip-card-back {
+            background-image: url(images.jpg);
+        }
+
+        .flip-card:nth-of-type(7) .flip-card-front,
+        .flip-card:nth-of-type(7) .flip-card-back {
+            background-image: url(beautiful-landscape-digital-artwork-4k-b2-1280x2120.jpg);
+        }
+
+        .flip-card:nth-of-type(8) .flip-card-front,
+        .flip-card:nth-of-type(8) .flip-card-back {
+            background-image: url(pic_5c2689b940892_orig.jpeg);
+        }
+
+        .flip-card:nth-of-type(9) .flip-card-front,
+        .flip-card:nth-of-type(9) .flip-card-back {
+            background-image: url(image.jpg);
+        }
+
+        .flip-card:nth-of-type(10) .flip-card-front,
+        .flip-card:nth-of-type(10) .flip-card-back {
+            background-image: url(IMG_4969.jpg);
+        }
+
+        .flip-card-front {
+            transform: rotateY(0deg);
+        }
+
+        .flip-card-back {
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform: rotateY(180deg);
+        }
+
+        .flip-card-front::after,
+        .flip-card-back::after {
+            content: "";
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0.6;
+        }
+
+        .flip-card-front .inner,
+        .flip-card-back .inner {
+            width: 100%;
+            padding: 40px;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%) translateZ(60px) scale(0.94);
+            z-index: 2;
+        }
+
+        .inner .icon {
+            width: 120px;
+            margin-bottom: 20px;
+        }
+
+        .inner h3 {
+            margin-bottom: 8px;
+            color: #ffffff;
+            font-size: 30px;
+            font-weight: 700;
+            line-height: 40px;
+            text-transform: capitalize;
+        }
+
+        .inner p {
+            color: #ffffff;
+            font-size: 16px;
+            line-height: 28px;
+            left: 48000px;
+        }
+
+        .flip-card:hover .flip-card-front {
+            transform: rotateY(-180deg);
+        }
+
+        .flip-card:hover .flip-card-back {
+            transform: rotateY(0deg);
+        }
+
+        #position1 {
+            left: 120px;
+            top: 1020px
+        }
+
+        #position2 {
+            left: 1020px;
+            top: 1020px;
+        }
+
+        #position3 {
+            left: 120px;
+            top: 1720px
+        }
+
+        #position4 {
+            left: 1020px;
+            top: 1720px
+        }
+
+        #position5 {
+            left: 120px;
+            top: 2420px
+        }
+
+        #position6 {
+            left: 1020px;
+            top: 2420px
+        }
+
+        #position7 {
+            left: 120px;
+            top: 3120px
+        }
+
+        #position8 {
+            left: 1020px;
+            top: 3120px
+        }
+
+        #position9 {
+            left: 120px;
+            top: 3220px
+        }
+
+        #position10 {
+            left: 1020px;
+            top: 3220px
+        }
+
+
+
+        #middletextsub {
+            position: absolute;
+            left: 410px;
+            color: #fff;
+            top: 800px;
+            font-size: 44px;
+        }
+
+        .fade-in {
+            animation: fadeIn 3s;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        #tobesub {
+            position: absolute;
+            top: 3900px;
+            left: 57px;
+            font-size: 24px;
+            color: #fff;
+        }
+
+        #footer {
+            position: absolute;
+            width: 1920px;
+            height: 176px;
+            left: 0px;
+            top: 1490px;
+            background: #BE4D4D;
+        }
+
+        #footer {
+            position: absolute;
+            width: 1920px;
+            height: 176px;
+            left: 0px;
+            top: 4120px;
+            background: #BE4D4D;
+        }
+
+        #footertext {
+            position: absolute;
+            width: 922px;
+            height: 61px;
+            left: 400px;
+            top: 31px;
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 30px;
+            line-height: 70px;
+            color: #fff;
+        }
+
+        #follow {
+            position: absolute;
+            width: 122px;
+            height: 61px;
+            left: 1096px;
+            top: 91px;
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 70px;
+            color: #fff;
+        }
+
+        #abt {
+            position: absolute;
+            left: 100px;
+            color: #fff;
+            top: 200px;
+            font-size: 44px;
+        }
+
+        #abt2 {
+            width: 896px;
+            position: absolute;
+            left: 100px;
+            color: #fff;
+            top: 300px;
+            font-size: 24px;
+            line-height: 45px;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="colorista.css">
+    <title>Colorista | HealthiCare</title>
+</head>
+
+<body class="fade-in">
+    <nav>
+
+        <img src="draft_different color.png" id="logo">
+        <p id="logotext">HealthiCare</p>
+
+        <a href="../ContactAbout/contact">
+            <main class="button" id="button3place">
+                <p>Contact</p>
+            </main>
+        </a>
+
+        <a href="../home">
+            <main class="button" id="button4place">
+                <p>Home</p>
+            </main>
+        </a>
+
+    </nav>
+
+
+    <p class="fade-in" id="abt">Colorista by HealthiCare</p>
+    <p class="fade-in" id="abt2">Colorista is an event, where our users forget about all their everyday problems and
+        showcase themselves
+        in any form of art. Colorista is an annual event with exiciting prizes which are disclosed on the day of results
+        itself. Colorista is just a way for people to get busy with something which is "not important" unlike all other
+        things in life!</p>
+
+
+
+    <p id="middletextsub" class="fade-in">Some submissions by the participants</p>
+
+    <hr color="#fff" width="4943px" style="position:absolute; top:900px">
+
+
+    <div class="flip-card" id="position1">
+        <div class="flip-card-front">
+            <div class="inner">
+                </lottie-player>
+            </div>
+        </div>
+        <div class="flip-card-back">
+            <div class="inner">
+                <img src="https://artart-uploads.s3.amazonaws.com/2021/09/fatcat_art.webp" class="icon">
+                <h3>Andrew Saverin</h3>
+            </div>
+        </div>
+    </div>
+    <div class="flip-card" id="position2">
+        <div class="flip-card-front">
+            <div class="inner">
+
+            </div>
+        </div>
+        <div class="flip-card-back">
+            <div class="inner">
+                <img src="draft_different_color__1_-removebg-preview.png" class="icon" />
+                <h3>Tessa White</h3>
+            </div>
+        </div>
+    </div>
+    <div class="flip-card" id="position3">
+        <div class="flip-card-front">
+            <div class="inner">
+
+            </div>
+        </div>
+        <div class="flip-card-back">
+            <div class="inner">
+                <img src="draft_different_color__1_-removebg-preview.png" class="icon" />
+                <h3>James Affleck</h3>
+            </div>
+        </div>
+    </div>
+    <div class="flip-card" id="position4">
+        <div class="flip-card-front">
+            <div class="inner">
+
+            </div>
+        </div>
+        <div class="flip-card-back">
+            <div class="inner">
+                <img src="draft_different_color__1_-removebg-preview.png" class="icon" />
+                <h3>Johnathon Miller</h3>
+            </div>
+        </div>
+    </div>
+
+    <div class="flip-card" id="position5">
+        <div class="flip-card-front">
+            <div class="inner">
+
+            </div>
+        </div>
+        <div class="flip-card-back">
+            <div class="inner">
+                <img src="draft_different_color__1_-removebg-preview.png" class="icon" />
+                <h3>Stanley Hudsen</h3>
+            </div>
+        </div>
+    </div>
+
+    <div class="flip-card" id="position6">
+        <div class="flip-card-front">
+            <div class="inner">
+            </div>
+        </div>
+        <div class="flip-card-back">
+            <div class="inner">
+                <img src="draft_different_color__1_-removebg-preview.png" class="icon" />
+                <h3>Kevin Malone</h3>
+            </div>
+        </div>
+    </div>
+
+    <div class="flip-card" id="position7">
+        <div class="flip-card-front">
+            <div class="inner">
+            </div>
+        </div>
+        <div class="flip-card-back">
+            <div class="inner">
+                <img src="draft_different_color__1_-removebg-preview.png" class="icon" />
+                <h3>Jim Halpert</h3>
+            </div>
+        </div>
+    </div>
+
+    <div class="flip-card" id="position8">
+        <div class="flip-card-front">
+            <div class="inner">
+            </div>
+        </div>
+        <div class="flip-card-back">
+            <div class="inner">
+                <img src="draft_different_color__1_-removebg-preview.png" class="icon" />
+                <h3>Pam Beasely</h3>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+    <lottie-player src="https://assets3.lottiefiles.com/private_files/lf30_3l18zC.json" background="transparent"
+        speed="1" style="position:absolute; left: 1043px; top:220px; width:300px; height: 300px;" loop autoplay>
+    </lottie-player>
+
+    <hr color="#fff" width="4943px" style="position:absolute; top:4000px">
+
+    <p class="fade-in" id="tobesub">To submit your artwork, upload your artwork on this <a
+            href="https://forms.gle/s8juatZNq22mHLkP7">form.</a> Results will be
+        declared at the
+        end of october
+    </p>
+
+    <footer id="footer">
+        <p id="footertext">Copyright@2022 HealthiCare</p>
+        <a href="https://www.instagram.com/healthi.care/">
+            <lottie-player src="https://assets4.lottiefiles.com/packages/lf20_2ks3pjua.json" background="transparent"
+                speed="1" style="position:absolute; top:111px; left:1293px; width:70px; height: 70px;" loop autoplay>
+            </lottie-player>
+        </a>
+
+        <a href="https://twitter.com/DpsiHackathon">
+            <lottie-player src="https://assets7.lottiefiles.com/packages/lf20_hdy0htc2.json" background="transparent"
+                speed="1" style="position:absolute; top:111px; left:1353px; width:70px; height: 70px;" loop autoplay>
+            </lottie-player>
+        </a>
+
+        <a href="https://www.facebook.com/healthicareDPSI/">
+            <lottie-player src="https://assets8.lottiefiles.com/packages/lf20_7akxvutj.json" background="transparent"
+                speed="1" style="position:absolute; top:111px; left:1413px; width:70px; height: 70px;" loop autoplay>
+            </lottie-player>
+        </a>
+        <img src="draft_different color.png" id="logo" style="position:absolute; height:150px; width:150px" ; left:98px>
+
+        <p id="follow">Follow us on: </p>
+
+    </footer>
+
+
+
+</body>
+
+</html>

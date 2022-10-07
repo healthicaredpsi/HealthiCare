@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <style>
+        html,
+        body {
+            overflow: auto;
+            overflow-x: hidden;
+            height: 1390px;
+            display: flex;
+            background-color: #cf9393;
+        }
+
+        .nav1 {
+            position: absolute;
+            width: 2446px;
+            height: 100px;
+            left: 0px;
+            top: -41px;
+            background: #BE4D4D;
+        }
+
+        .nav2 {
+            position: absolute;
+            width: 2446px;
+            height: 30px;
+            left: 0px;
+            top: 51px;
+            background: #e35f5f;
+            color: #fff;
+        }
+
+        #textnav {
+            font-size: 18px;
+            font-family: 'Montserrat';
+        }
+
+        #logotext {
+            position: absolute;
+            width: 266px;
+            height: 55px;
+            left: 669px;
+            top: 13px;
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 30px;
+            line-height: 55px;
+            color: white;
+        }
+
+        #logo {
+            position: absolute;
+            height: 400px;
+            width: 400px;
+            left: 99px;
+            top: 200px
+        }
+
+        #lines {
+            width: 660px;
+            position: absolute;
+            left: 693px;
+            top: 240px;
+            color: white;
+            font-family: 'Montserrat';
+            font-size: 22px;
+            line-height: 55px;
+            ;
+        }
+
+        .fade-in {
+            animation: fadeIn 4s
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: -3;
+            }
+
+
+            to {
+                opacity: 3;
+            }
+
+        }
+
+        #do {
+            position: absolute;
+            color: white;
+            font-family: 'Montserrat';
+            font-size: 34px;
+            top: 842px;
+            left: 693px
+        }
+
+        .newthing {
+            position: absolute;
+            height: 144px;
+            left: 328px;
+            width: 904px;
+            top: 1020px;
+            padding: 30px;
+            border-radius: 6px;
+            background: rgb(233, 159, 159);
+        }
+
+        #edit {
+            color: white;
+            font-family: 'Montserrat';
+            font-size: 26px;
+        }
+
+        #alignment {
+            position: absolute;
+            width: 900px;
+            top: 1212px;
+            left: 700px;
+            font-family: 'Montserrat';
+        }
+
+        #notify {
+            position: absolute;
+            top: 1540px;
+            left: 300px;
+            color: #fff;
+            font-size: 38px;
+
+            font-family: 'Montserrat';
+
+        }
+
+        .box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .form-box {
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #ececec;
+            box-shadow: 10px 10px 15px #c7c4c4, -10px -10px #fff;
+        }
+
+        .form-box input {
+            font-size: 18px;
+            color: #333;
+            padding: 15px 10px;
+            border: none;
+            outline: none;
+            background: #ececec;
+        }
+
+        .form-box button {
+            color: #fff;
+            padding: 15px 20px;
+            font-size: 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #e35f5f;
+            cursor: pointer;
+            transition: .3s;
+
+        }
+
+        #footer {
+            position: absolute;
+            width: 1920px;
+            height: 176px;
+            left: 0px;
+            top: 1490px;
+            background: #BE4D4D;
+        }
+
+        #footer {
+            position: absolute;
+            width: 1920px;
+            height: 176px;
+            left: 0px;
+            top: 1890px;
+            background: #BE4D4D;
+        }
+
+        #footertext {
+            position: absolute;
+            width: 922px;
+            height: 61px;
+            left: 400px;
+            top: 31px;
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 30px;
+            line-height: 70px;
+            color: #fff;
+        }
+
+        #follow {
+            position: absolute;
+            width: 122px;
+            height: 61px;
+            left: 1096px;
+            top: 91px;
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 70px;
+            color: #fff;
+        }
+    </style>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="home.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+</head>
+
+<body class="fade-in">
+
+    <nav class="nav1">
+        <h1 id="logotext">HealthiCare</h1>
+    </nav>
+    <nav class="nav2" id="textnav">
+        <a href="/home/" style="text-decoration: none; color:#fff; position:absolute; left:100px">Home</a>
+        <a href="../mindfullness/" style="text-decoration: none; color:#fff; position:absolute; left:300px">Relax</a>
+        <a href="../communcation/" style="text-decoration: none; color:#fff; position:absolute; left:500px">Chat</a>
+        <a href="../challenges/colorista" style="text-decoration: none; color:#fff; position:absolute; left:700px">Colorista</a>
+        <a href="../challenges/" style="text-decoration: none; color:#fff; position:absolute; left:900px">Challenges</a>
+        <a href="..ContactAbout/about2/" style="text-decoration: none; color:#fff; position:absolute; left:1100px">About</a>
+        <a href="..ContactAbout/contact/" style="text-decoration: none; color:#fff; position:absolute; left:1300px">Contact</a>
+    </nav>
+
+    <img src="draft_different_color__1_-removebg-preview.png" id="logo">
+    <p id="lines">HealthiCare is that small break in our very busy everyday lifestyle that we deserve. This platform is
+        a way to
+        showcase your
+        talent via various challenges, you talk to people, you relax here... We are your personal assistant and your
+        cute little HealthiFriend :)</p>
+
+    <a href="#bot">
+        <lottie-player src="https://assets8.lottiefiles.com/private_files/lf30_vrkybiht.json" background="transparent"
+            speed="1" style="position:absolute; top:82px; width: 100px; height: 100px;" loop autoplay></lottie-player>
+    </a>
+
+    <hr color="#fff" width="7083px" style="position:absolute; top:700px">
+
+    <lottie-player src="https://assets8.lottiefiles.com/packages/lf20_jy1bgnpp.json" background="transparent" speed="1"
+        style="position:absolute; top:782px; left:393px  ; width: 200px; height: 200px;" loop autoplay></lottie-player>
+
+    <h1 id="do">To Do List for Today:</h1>
+
+    <main class="newthing">
+        <ul id="edit">
+            <li>Meditate and Breathe for 30 mins in the <a href="../mindfullness/">Relax section</a></li>
+            <li>Spend atleast 15 minutes with your friends on the <a href="../communication"> Community chat</a></li>
+            <li>Make progress towards your <a href="../challenges/colorista">Colorista project</a></li>
+        </ul>
+    </main>
+
+    <hr color="#fff" width="7083px" style="position:absolute; top:1400px">
+
+    <div class="box" id="alignment">
+        <form action="#">
+            <div class="form-box">
+                <input type="text" name="EmailAddress" placeholder="Enter your email">
+                <button type="submit">Subscribe</button>
+            </div>
+        </form>
+    </div>
+
+    <p id="notify">Get notified via emails: </p>
+
+    <footer id="footer">
+        <p id="footertext">Copyright@2022 HealthiCare</p>
+        <a href="https://www.instagram.com/healthi.care/">
+            <lottie-player src="https://assets4.lottiefiles.com/packages/lf20_2ks3pjua.json" background="transparent"
+                speed="1" style="position:absolute; top:111px; left:1293px; width:70px; height: 70px;" loop autoplay>
+            </lottie-player>
+        </a>
+
+        <a href="https://twitter.com/DpsiHackathon">
+            <lottie-player src="https://assets7.lottiefiles.com/packages/lf20_hdy0htc2.json" background="transparent"
+                speed="1" style="position:absolute; top:111px; left:1353px; width:70px; height: 70px;" loop autoplay>
+            </lottie-player>
+        </a>
+
+        <a href="https://www.facebook.com/healthicareDPSI/">
+            <lottie-player src="https://assets8.lottiefiles.com/packages/lf20_7akxvutj.json" background="transparent"
+                speed="1" style="position:absolute; top:111px; left:1413px; width:70px; height: 70px;" loop autoplay>
+            </lottie-player>
+        </a>
+        <img src="draft_different color.png" id="newlogo"
+            style="position:absolute; height:150px; width:150px; left: 109px" ; left:98px>
+
+        <p id="follow">Follow us on: </p>
+
+    </footer>
+
+</body>
+
+</html>

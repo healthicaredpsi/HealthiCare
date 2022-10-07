@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Montserrat",
+        }
+
+        body {
+            display: flex;
+            min-height: 100vh;
+            align-items: center;
+            justify-content: center;
+            background: #f2f2f2;
+            position: relative;
+            overflow: auto;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            top: 1359px;
+            left: px;
+            background: #BE4D4D;
+            clip-path: inset(47% 0 0 0);
+            z-index: -1;
+            height: 100%;
+        }
+
+        ::selection {
+            background: #FF676D;
+            color: #fff;
+        }
+
+        .container {
+            position: absolute;
+            top: 1600px;
+            max-width: 950px;
+            width: 100%;
+            overflow: hidden;
+            padding: 80px 0;
+        }
+
+        .container .main-card {
+            display: flex;
+            justify-content: space-evenly;
+            width: 200%;
+            transition: 1s;
+        }
+
+        #two:checked~.main-card {
+            margin-left: -100%;
+        }
+
+        .container .main-card .cards {
+            width: calc(100% / 2 - 10px);
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 20px;
+            justify-content: space-between;
+        }
+
+        .main-card .cards .card {
+            width: calc(100% / 3 - 10px);
+            background: #fff;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
+            transition: all 0.4s ease;
+        }
+
+        .main-card .cards .card:hover {
+            transform: translateY(-15px);
+        }
+
+        .cards .card .content {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .cards .card .content .img {
+            height: 130px;
+            width: 130px;
+            border-radius: 50%;
+            padding: 3px;
+            background: #FF676D;
+            margin-bottom: 14px;
+        }
+
+        .card .content .img img {
+            height: 100%;
+            width: 100%;
+            border: 3px solid #ffff;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .card .content .name {
+            font-size: 20px;
+            font-weight: 500;
+        }
+
+        .card .content .job {
+            font-size: 20px;
+            color: #FF676D;
+        }
+
+        .card .content .media-icons {
+            margin-top: 10px;
+            display: flex;
+
+        }
+
+        .media-icons a {
+            text-align: center;
+            line-height: 33px;
+            height: 35px;
+            width: 35px;
+            margin: 0 4px;
+            font-size: 14px;
+            color: #FFF;
+            border-radius: 50%;
+            border: 2px solid transparent;
+            background: #FF676D;
+            transition: all 0.3s ease;
+        }
+
+        .media-icons a:hover {
+            color: #FF676D;
+            background-color: #fff;
+            border-color: #FF676D;
+        }
+
+        .container .button {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin: 20px;
+        }
+
+        .button label {
+            position: relative;
+            height: 15px;
+            width: 15px;
+            left: -147px;
+            border-radius: 20px;
+            background: #fff;
+            margin: 0 4px;
+            cursor: pointer;
+            transition: all 0.5s ease;
+        }
+
+        .button label.active {
+            width: 35px;
+        }
+
+        #one:checked~.button .one {
+            width: 35px;
+        }
+
+        #one:checked~.button .two {
+            width: 15px;
+        }
+
+        #two:checked~.button .one {
+            width: 15px;
+        }
+
+        #two:checked~.button .two {
+            width: 35px;
+        }
+
+        input[type="radio"] {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .main-card .cards .card {
+                margin: 20px 0 10px 0;
+                width: calc(100% / 2 - 10px);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .main-card .cards .card {
+                /* margin: 20px 0 10px 0; */
+                width: 100%;
+            }
+        }
+
+
+
+        nav {
+            position: absolute;
+            width: 2446px;
+            height: 170px;
+            left: -20px;
+            top: -41px;
+            background: #BE4D4D;
+        }
+
+        .button1 {
+            position: absolute;
+            width: 150px;
+            height: 40px;
+            left: 107px;
+            position: absolute;
+            border-radius: 10px;
+            background-color: #D05959;
+        }
+
+        .button1>p {
+            position: absolute;
+            font-family: 'Montserrat';
+            top: 12px;
+            left: 56px;
+            text-align: center;
+            color: white
+        }
+
+        main:hover {
+            background-color: #D05959;
+        }
+
+        #button3place {
+            left: 1210px;
+            top: 90px;
+        }
+
+        #button4place {
+            left: 1010px;
+            top: 90px;
+        }
+
+        #logo {
+            position: absolute;
+            width: 149px;
+            height: 149px;
+            left: 67px;
+            top: 20px;
+        }
+
+        #logotext {
+            position: absolute;
+            width: 266px;
+            height: 55px;
+            left: 239px;
+            top: 86px;
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 35px;
+            line-height: 55px;
+            color: white;
+        }
+
+        #new1 {
+            position: absolute;
+            top: 182px;
+            left: 538px;
+            color: #FF676D;
+            font-family: 'Montserrat';
+            font-size: 48px;
+        }
+
+        #img1 {
+            position: absolute;
+            top: 182px;
+            left: 34px;
+        }
+
+        .fade-in {
+            animation: fadeIn 3s;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        #comp1 {
+            position: absolute;
+            top: 532px;
+            left: 125px;
+            font-family: "Montserrat";
+            color: #FF676D
+        }
+
+        #comp2 {
+            position: absolute;
+            top: 542px;
+            left: 716px;
+            font-family: "Montserrat";
+            color: #FF676D
+        }
+
+        #comp3 {
+            position: absolute;
+            top: 542px;
+            left: 1234px;
+            font-family: "Montserrat";
+            color: #FF676D
+        }
+
+        #annual {
+            position: absolute;
+            top: 758px;
+            left: 664px;
+            font-family: "Montserrat";
+            color: #FF676D
+        }
+
+        #comp4 {
+            position: absolute;
+            top: 1202px;
+            left: 676px;
+            font-size: 54px;
+            font-family: "Montserrat";
+            color: #FF676D
+        }
+
+        #text {
+            width: 100%;
+            font-family: 'Montserrat';
+            text-align: center;
+            position: absolute;
+            left: -517px;
+            top: 1000px;
+            transform: translateY(-50%);
+            color: #333
+        }
+
+        #text2 {
+            width: 100%;
+            text-align: center;
+            font-family: 'Montserrat';
+            position: absolute;
+            left: 517px;
+            top: 1000px;
+            transform: translateY(-50%);
+            color: #333
+        }
+
+        #text3 {
+            width: 100%;
+            text-align: center;
+            font-family: 'Montserrat';
+            position: absolute;
+            left: -577px;
+            top: 688px;
+            transform: translateY(-50%);
+            color: #333
+        }
+
+
+        #text4 {
+            width: 100%;
+            text-align: center;
+            font-family: 'Montserrat';
+            position: absolute;
+            left: 557px;
+            top: 688px;
+            transform: translateY(-50%);
+            color: #333
+        }
+
+        span {
+            font-size: 55px;
+            padding: 0 calc(0.5rem + 0.5vw);
+            position: relative;
+            opacity: 0;
+        }
+
+        span:not(#dot) {
+            bottom: -200px;
+            animation-name: appear;
+            animation-duration: 2s;
+            animation-timing-function: ease-out;
+            animation-fill-mode: forwards;
+        }
+
+        span:nth-of-type(2) {
+            animation-delay: 0.2s;
+        }
+
+        span:nth-of-type(3) {
+            animation-delay: 0.4s;
+        }
+
+        span:nth-of-type(4) {
+            animation-delay: 0.6s;
+        }
+
+        span:nth-of-type(5) {
+            animation-delay: 0.8s;
+        }
+
+        span:nth-of-type(6) {
+            animation-delay: 1.0s;
+        }
+
+        span:nth-of-type(7) {
+            animation-delay: 1.2s;
+        }
+
+        #dot {
+            bottom: 100px;
+            animation-name: dot;
+            animation-duration: 1s;
+            animation-timing-function: ease-in;
+            animation-fill-mode: forwards;
+            animation-delay: 1.3s;
+        }
+
+        @keyframes appear {
+            0% {
+                opacity: 0;
+                bottom: -200px;
+            }
+
+            70% {
+                opacity: 1;
+                bottom: 15px;
+            }
+
+            85% {
+                opacity: 1;
+                bottom: -10px;
+            }
+
+            100% {
+                opacity: 1;
+                bottom: 0;
+            }
+        }
+
+        @keyframes dot {
+            0% {
+                opacity: 0;
+                bottom: 100px;
+            }
+
+            50% {
+                opacity: 1;
+                bottom: 0;
+            }
+
+            65% {
+                opacity: 1;
+                bottom: 15px;
+            }
+
+            75% {
+                opacity: 1;
+                bottom: 0;
+            }
+
+            90% {
+                opacity: 1;
+                bottom: 10px;
+            }
+
+            100% {
+                opacity: 1;
+                bottom: 0;
+            }
+        }
+
+        #hr1 {
+            position: absolute;
+            height: .01px;
+            width: 3000px;
+            left: -50px;
+            top: 150px
+        }
+
+        .fade-in {
+            animation: fadeIn 4s
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: -3;
+            }
+
+
+            to {
+                opacity: 3;
+            }
+
+        }
+
+        #last {
+            position: absolute;
+            top: 1482px;
+            left: 498px;
+            color: #FF676D;
+            font-family: 'Montserrat';
+            font-size: 48px;
+        }
+
+        #follow {
+            position: absolute;
+            width: 122px;
+            height: 61px;
+            left: 1096px;
+            top: 2051px;
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 70px;
+            color: #fff;
+        }
+
+        #footertext {
+            position: absolute;
+            width: 922px;
+            height: 61px;
+            left: 400px;
+            top: 2051px;
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 30px;
+            line-height: 70px;
+            color: #fff;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="challenge.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenges | HealthiCare</title>
+</head>
+
+<body class="fade-in">
+
+    <nav>
+
+        <img src="draft_different color.png" id="logo">
+        <p id="logotext">HealthiCare</p>
+
+        <a href="/colorista">
+            <main class="button1" id="button3place">
+                <p>Colorista</p>
+            </main>
+        </a>
+
+        <a href="../home">
+            <main class="button1" id="button4place">
+                <p>Home</p>
+            </main>
+        </a>
+
+    </nav>
+
+    <div class="container">
+        <input type="radio" name="dot" id="one">
+        <input type="radio" name="dot" id="two">
+        <div class="main-card">
+            <div class="cards">
+                <div class="card">
+                    <div class="content">
+                        <div class="img">
+                            <img src="download (2).jpg" alt="">
+                        </div>
+                        <div class="details">
+                            <div class="name">Andrew Neil</div>
+                            <div class="job">1st Place</div>
+                        </div>
+                        <div class="media-icons">
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="content">
+                        <div class="img">
+                            <img src="Adriana-Calvo-3.jpg" alt="">
+                        </div>
+                        <div class="details">
+                            <div class="name">Jasmine Carter</div>
+                            <div class="job">2nd Place</div>
+                        </div>
+                        <div class="media-icons">
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="content">
+                        <div class="img">
+                            <img src="download (3).jpg" alt="">
+                        </div>
+                        <div class="details">
+                            <div class="name">Justin Chung</div>
+                            <div class="job">3rd Place</div>
+                        </div>
+                        <div class="media-icons">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="cards">
+                <div class="card">
+                    <div class="content">
+                        <div class="img">
+                            <img src="The_Duke_of_York_in_Belfast_(cropped).jpg" alt="">
+                        </div>
+                        <div class="details">
+                            <div class="name">Appolo Reef</div>
+                            <div class="job">4th Place</div>
+                        </div>
+                        <div class="media-icons">
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="content">
+                        <div class="img">
+                            <img src="Jasmine-Carter-8.jpg" alt="">
+                        </div>
+                        <div class="details">
+                            <div class="name">Adrina Calvo</div>
+                            <div class="job">5th Place</div>
+                        </div>
+                        <div class="media-icons">
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="content">
+                        <div class="img">
+                            <img src="2tP9JD4Q.jpeg" alt="">
+                        </div>
+                        <div class="details">
+                            <div class="name">Nicole Lewis</div>
+                            <div class="job">6th Place</div>
+                        </div>
+                        <div class="media-icons">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="button">
+            <label for="one" class=" active one"></label>
+            <label for="two" class="two"></label>
+        </div>
+    </div>
+    <p id="new1">Upcoming challenges: </p>
+
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <lottie-player src="https://assets5.lottiefiles.com/packages/lf20_kvwtrk4n.json" background="transparent" speed="1"
+        style="position:absolute; left: 64px; width:300px; height: 300px;" loop autoplay></lottie-player>
+
+    <h1 class="fade-in" id="comp1">MeditiKing</h1>
+
+    <lottie-player src="https://assets8.lottiefiles.com/packages/lf20_f839c3jz.json" background="transparent" speed="1"
+        style="position:absolute; left: 645px;  width: 280px; height: 280px;" loop autoplay></lottie-player>
+
+    <h1 class="fade-in" id="comp2">Colorists</h1>
+
+    <lottie-player src="https://assets6.lottiefiles.com/packages/lf20_pqcqbsc1.json" background="transparent" speed="1"
+        style="position:absolute; left: 1194px; width:250px; height: 250px;" loop autoplay></lottie-player>
+
+    <h1 class="fade-in" id="comp3">Calmaster</h1>
+
+    <h1 id="annual">Annual Art Fest</h1>
+
+    <lottie-player src="https://assets7.lottiefiles.com/packages/lf20_s8pbrcfw.json" background="transparent" speed="1"
+        style="position:absolute; left: 638px; top: 867px; width:300px; height: 300px;"></lottie-player>
+
+    <a href="/colorista">
+        <div class="button" id="button4place">
+            <p id="comp4">Colorista</p>
+        </div>
+    </a>
+
+    <section id="text">
+        <span>E</span>
+        <span>N</span>
+        <span>R</span>
+        <span>O</span>
+        <span>L</span>
+
+    </section>
+
+    <section id="text2">
+        <span>N</span>
+        <span>O</span>
+        <span>W</span>
+    </section>
+
+    <hr color="#FF676D" width="7083px" style="position:absolute; top:1383px">
+
+    <p id="last">Previous colorista results</p>
+
+
+    <a href="https://www.instagram.com/healthi.care/">
+        <lottie-player src="https://assets4.lottiefiles.com/packages/lf20_2ks3pjua.json" background="transparent"
+            speed="1" style="position:absolute; top:2051px; left:1293px; width:70px; height: 70px;" loop autoplay>
+        </lottie-player>
+    </a>
+
+    <a href="https://twitter.com/DpsiHackathon">
+        <lottie-player src="https://assets7.lottiefiles.com/packages/lf20_hdy0htc2.json" background="transparent"
+            speed="1" style="position:absolute; top:2051px; left:1353px; width:70px; height: 70px;" loop autoplay>
+        </lottie-player>
+    </a>
+
+    <a href="https://www.facebook.com/healthicareDPSI/">
+        <lottie-player src="https://assets8.lottiefiles.com/packages/lf20_7akxvutj.json" background="transparent"
+            speed="1" style="position:absolute; top:2051px; left:1413px; width:70px; height: 70px;" loop autoplay>
+        </lottie-player>
+    </a>
+
+    <p id="follow">Follow us on: </p>
+
+    <p id="footertext">Copyright@2022 HealthiCare</p>
+
+    <img src="draft_different color.png" style="position:absolute; height:150px; width:150px; top:1991px; left:48px">
+
+
+</body>
+
+</html>
